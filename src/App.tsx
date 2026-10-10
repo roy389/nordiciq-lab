@@ -140,7 +140,7 @@ export default function App() {
       <section className="content" id="kontakt">
         <span className="section-label">KONTAKT</span>
         <h2>Kontakt</h2>
-        <p>Vil du vite mer? Ta kontakt på [e-post].</p>
+        <p>Vil du vite mer? Ta kontakt på post@nordiciq.io.</p>
       </section>
 
       <footer>
