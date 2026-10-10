@@ -4,48 +4,132 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, sans-serif;
-  background-color: #ffffff;
-  color: #333;
+  background-color: #0A0F1C;
+  color: #9CA3AF;
   line-height: 1.6;
 }
 
+/* ── Hero ─────────────────────────────────────────────── */
 .hero {
-  background-color: #1E3A5F;
-  color: #ffffff;
+  position: relative;
+  background-color: #0A0F1C;
+  background-image:
+    linear-gradient(#1F2937 1px, transparent 1px),
+    linear-gradient(90deg, #1F2937 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: #F3F4F6;
   text-align: center;
-  padding: 8rem 1.5rem;
+  padding: 4rem 1.5rem;
+}
+
+/* Fade the grid at the edges */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    #0A0F1C 75%
+  );
+  pointer-events: none;
+}
+
+.hero h1,
+.hero p,
+.hero-buttons {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
   font-size: 2.5rem;
+  line-height: 1.15;
+  color: #F3F4F6;
   margin-bottom: 0.5rem;
+}
+
+.hero-accent {
+  color: #38BDF8;
 }
 
 .hero p {
   font-size: 1.125rem;
-  opacity: 0.9;
+  color: #9CA3AF;
+  margin-bottom: 2rem;
 }
 
+/* ── Buttons ──────────────────────────────────────────── */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-primary {
+  background-color: #38BDF8;
+  color: #0A0F1C;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #F3F4F6;
+  border: 1px solid #1F2937;
+}
+
+/* ── Content sections ─────────────────────────────────── */
 .content {
   max-width: 52rem;
   margin: 0 auto;
   padding: 3rem 1.5rem;
 }
 
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #38BDF8;
+  border: 1px solid #38BDF8;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .content h2 {
-  color: #1E3A5F;
+  color: #F3F4F6;
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #C9A227;
+  border-bottom: 2px solid #38BDF8;
   display: inline-block;
 }
 
 .content p {
   font-size: 1rem;
+  color: #9CA3AF;
 }
 
 .content ul {
@@ -54,9 +138,10 @@ body {
 
 .content li {
   margin-bottom: 0.5rem;
+  color: #9CA3AF;
 }
 
-/* Cards: Hvorfor egen AI */
+/* ── Cards (Hvorfor egen AI) ──────────────────────────── */
 .cards {
   display: flex;
   flex-direction: column;
@@ -65,28 +150,36 @@ body {
 }
 
 .card {
-  background-color: #EEF4FA;
+  background-color: #111827;
+  border: 1px solid #1F2937;
   border-radius: 12px;
   padding: 2rem 1.5rem;
   text-align: center;
 }
 
-.card-icon {
+.icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: #0C2A3F;
+  border-radius: 12px;
   margin-bottom: 1rem;
 }
 
 .card h3 {
-  color: #1E3A5F;
+  color: #F3F4F6;
   font-size: 1.125rem;
   margin-bottom: 0.5rem;
 }
 
 .card p {
   font-size: 0.95rem;
-  color: #555;
+  color: #9CA3AF;
 }
 
-/* Steps: Slik fungerer det */
+/* ── Steps (Slik fungerer det) ────────────────────────── */
 .steps {
   display: flex;
   flex-direction: column;
@@ -95,7 +188,8 @@ body {
 }
 
 .step {
-  background-color: #EEF4FA;
+  background-color: #111827;
+  border: 1px solid #1F2937;
   border-radius: 12px;
   padding: 1.5rem 1rem;
   text-align: center;
@@ -107,36 +201,36 @@ body {
   justify-content: center;
   width: 2.25rem;
   height: 2.25rem;
-  background-color: #1E3A5F;
-  color: #ffffff;
-  border-radius: 50%;
+  color: #38BDF8;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.25rem;
   margin-bottom: 0.75rem;
 }
 
 .step h3 {
-  color: #1E3A5F;
+  color: #F3F4F6;
   font-size: 1rem;
   margin-bottom: 0.25rem;
 }
 
 .step p {
   font-size: 0.9rem;
-  color: #555;
+  color: #9CA3AF;
 }
 
+/* ── Footer ───────────────────────────────────────────── */
 footer {
-  background-color: #1E3A5F;
-  color: #ffffff;
+  background-color: #111827;
+  color: #9CA3AF;
   text-align: center;
   padding: 1.5rem;
-  margin-top: 2rem;
+  border-top: 1px solid #1F2937;
 }
 
+/* ── Desktop (≥768 px) ────────────────────────────────── */
 @media (min-width: 768px) {
   .hero {
-    padding: 12rem 2rem;
+    padding: 6rem 2rem;
   }
 
   .hero h1 {
