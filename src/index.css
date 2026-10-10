@@ -13,10 +13,10 @@ body {
 }
 
 .hero {
-  background-color: #1e3a5f;
+  background-color: #1E3A5F;
   color: #ffffff;
   text-align: center;
-  padding: 4rem 1.5rem;
+  padding: 8rem 1.5rem;
 }
 
 .hero h1 {
@@ -30,15 +30,18 @@ body {
 }
 
 .content {
-  max-width: 48rem;
+  max-width: 52rem;
   margin: 0 auto;
   padding: 3rem 1.5rem;
 }
 
 .content h2 {
-  color: #1e3a5f;
+  color: #1E3A5F;
   font-size: 1.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #C9A227;
+  display: inline-block;
 }
 
 .content p {
@@ -53,8 +56,78 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* Cards: Hvorfor egen AI */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background-color: #EEF4FA;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.card-icon {
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  color: #1E3A5F;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Steps: Slik fungerer det */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.step {
+  background-color: #EEF4FA;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: #1E3A5F;
+  color: #ffffff;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.step h3 {
+  color: #1E3A5F;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.step p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
 footer {
-  background-color: #1e3a5f;
+  background-color: #1E3A5F;
   color: #ffffff;
   text-align: center;
   padding: 1.5rem;
@@ -63,7 +136,7 @@ footer {
 
 @media (min-width: 768px) {
   .hero {
-    padding: 6rem 2rem;
+    padding: 12rem 2rem;
   }
 
   .hero h1 {
@@ -80,5 +153,21 @@ footer {
 
   .content h2 {
     font-size: 2rem;
+  }
+
+  .cards {
+    flex-direction: row;
+  }
+
+  .cards .card {
+    flex: 1;
+  }
+
+  .steps {
+    flex-direction: row;
+  }
+
+  .steps .step {
+    flex: 1;
   }
 }
